@@ -7,7 +7,7 @@ ENV JUPYTER_TOKEN='0000'
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y fish neovim
+RUN apt-get install -y fish neovim bat plotly
 RUN pip install glom lenses
 
 # https://discourse.jupyter.org/t/customizing-shell-launched-by-terminal/3412
