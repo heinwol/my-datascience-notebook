@@ -7,7 +7,7 @@ ENV JUPYTER_TOKEN='0000'
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y fish neovim bat plotly
+RUN apt-get install -y fish neovim bat python3-plotly
 RUN pip install glom lenses
 
 # https://discourse.jupyter.org/t/customizing-shell-launched-by-terminal/3412
@@ -23,3 +23,6 @@ c.NotebookApp.terminado_settings = { "shell_command": ["/usr/bin/fish"] }\
 
 
 WORKDIR "${HOME}"
+
+# docker build . -t my-jupyter-image
+# docker run --name my-datasciense-notebook -it --user root -p 8889:8888 -v ~/Documents:/home/jovyan/Documents my-jupyter-image
