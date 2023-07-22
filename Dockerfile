@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook
+FROM jupyter/datascience-notebook:latest
 
 USER root
 
@@ -13,13 +13,10 @@ RUN pip install glom lenses
 # for resource networks
 RUN pip install array_to_latex cairosvg
 
+COPY . .
+
 # https://discourse.jupyter.org/t/customizing-shell-launched-by-terminal/3412
-RUN echo '\
-\
-\
-# My additions\
-c.NotebookApp.terminado_settings = { "shell_command": ["/usr/bin/fish"] }\
-' >> /etc/jupyter/jupyter_notebook_config.py
+RUN cat jupyter_notebook_config.py >> /etc/jupyter/jupyter_notebook_config.py
 
 #USER jovyan
 

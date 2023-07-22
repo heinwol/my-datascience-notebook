@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  my-datascience-notebook:
+    build: .
+    user: root
+    ports:
+      - "8889:8888"
+    volumes:
+      - ~/Documents:/home/jovyan/Documents:rw
