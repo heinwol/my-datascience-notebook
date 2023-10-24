@@ -8,7 +8,7 @@ ENV JUPYTER_TOKEN='0000'
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y fish neovim bat python3-plotly graphviz
-RUN pip install glom lenses plotly
+RUN pip install glom lenses plotly black[jupyter]
 
 # for resource networks
 RUN pip install array_to_latex cairosvg
