@@ -16,7 +16,7 @@ RUN pip install array_to_latex cairosvg
 COPY jupyter-config .
 
 # https://discourse.jupyter.org/t/customizing-shell-launched-by-terminal/3412
-RUN cat jupyter-config/jupyter_notebook_config.py >> /etc/jupyter/jupyter_notebook_config.py
+RUN cat jupyter_notebook_config.py >> /etc/jupyter/jupyter_notebook_config.py
 
 RUN conda init fish
 
